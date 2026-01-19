@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <title>PokéPath TD 攻略站 - 专业的宝可梦塔防游戏攻略指南</title>
+    <meta name="description" content="PokéPath TD 攻略站提供完整的宝可梦图鉴、路线攻略、属性克制表、强度排行等专业攻略内容">
+
+     <!-- 延迟加载第三方脚本 -->
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        // 延迟加载Google Analytics
+        const gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.defer = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-1QVBEXDNVC';
+        document.head.appendChild(gtagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1QVBEXDNVC');
+
+
+        // 延迟加载广告
+        const adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.defer = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7211137655456691';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      }, 3000);
+    });
+  </script>
+
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

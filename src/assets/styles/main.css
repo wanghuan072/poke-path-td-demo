@@ -1,0 +1,306 @@
+/* PokéPath TD 设计系统 - 简化版 */
+
+:root {
+  /* 主色调 */
+  --color-primary: #4a90e2;
+  --color-primary-dark: #357abd;
+  
+  /* 副色调 */
+  --color-secondary: #5cb85c;
+  --color-secondary-dark: #4a9a4a;
+  
+  /* 网格颜色 - 蓝绿色调，与主题色协调 */
+  --grid-color: rgba(107, 163, 232, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: #2d5016;
+  color: #2c3e1f;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('/images/bg.webp') center/cover no-repeat fixed;
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(180deg, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(30, 30, 30, 0.8), rgba(20, 20, 20, 0.75));
+  background-size:
+    55px 55px,
+    55px 55px,
+    auto;
+  opacity: 1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Page Header - 内页统一头部样式 */
+.page-header {
+  padding: 60px 0 40px;
+  margin-bottom: 40px;
+  position: relative;
+  background: linear-gradient(180deg, 
+    rgba(26, 35, 50, 0.95) 0%, 
+    rgba(20, 28, 42, 0.92) 100%);
+  border-bottom: 1px solid rgba(107, 163, 232, 0.2);
+}
+
+/* 顶部装饰边框 */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #6ba3e8 25%, 
+    #5cb85c 50%, 
+    #6ba3e8 75%, 
+    transparent 100%);
+}
+
+/* 背景装饰点 */
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(107, 163, 232, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(92, 184, 92, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-header-content {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* Badge 设计 */
+.page-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(26, 35, 50, 0.8);
+  border: 1.5px solid rgba(107, 163, 232, 0.3);
+  border-radius: 50px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.badge-icon {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #6ba3e8;
+  text-transform: uppercase;
+}
+
+/* 标题设计 */
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, 
+    #f5f8f0 0%, 
+    #6ba3e8 40%,
+    #5cb85c 70%,
+    #f5f8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: block;
+  letter-spacing: -0.3px;
+}
+
+/* 标题下方装饰线 */
+.page-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #6ba3e8, 
+    #5cb85c, 
+    transparent);
+  border-radius: 2px;
+}
+
+/* 副标题设计 */
+.page-subtitle {
+  font-size: 1rem;
+  color: rgba(245, 248, 240, 0.8);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 50px 0 35px;
+    margin-bottom: 35px;
+  }
+
+  .page-header-content {
+    padding: 0 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.9rem;
+    margin-bottom: 14px;
+    letter-spacing: -0.2px;
+  }
+
+  .page-title::after {
+    width: 70px;
+    height: 2px;
+    margin-top: 12px;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .page-header-badge {
+    padding: 5px 14px;
+    margin-bottom: 14px;
+    gap: 6px;
+  }
+
+  .badge-icon {
+    font-size: 0.75rem;
+  }
+
+  .badge-text {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 45px 0 30px;
+    margin-bottom: 30px;
+  }
+
+  .page-header-content {
+    padding: 0 1rem;
+  }
+
+  .page-title {
+    font-size: 1.65rem;
+    margin-bottom: 12px;
+  }
+
+  .page-title::after {
+    width: 60px;
+    height: 2px;
+    margin-top: 10px;
+  }
+
+  .page-subtitle {
+    font-size: 0.9rem;
+    margin-top: 14px;
+  }
+
+  .page-header-badge {
+    padding: 4px 12px;
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  .badge-icon {
+    font-size: 0.7rem;
+  }
+
+  .badge-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Page View - 内页统一容器样式 */
+.page-view {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #f5f8f0;
+}
+
+/* Page Content - 内页统一内容区域样式 */
+.page-content {
+  flex: 1;
+  padding: 0 0 40px 0;
+  position: relative;
+  z-index: 1;
+}
