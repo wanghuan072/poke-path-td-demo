@@ -10,13 +10,12 @@
         </div>
         <div class="hero-content">
           <div class="hero-main">
-            <h1 class="hero-title">
-              PokéPath TD Guide - Complete Wiki, Tier List & Strategy
-            </h1>
+            <h1 class="hero-title">PokéPath TD Guide - Complete Wiki, Tier List & Strategy</h1>
             <p class="hero-subtitle">
-              Master <strong>PokéPath TD</strong> tower defense with our comprehensive strategy guide. Complete Pokémon
-              database, DPS calculator, route strategy analysis, and enemy data. Build the perfect team and conquer all
-              routes with PokéPath TD best teams and meta strategies.
+              Master <strong>PokéPath TD</strong> tower defense with our comprehensive strategy
+              guide. Complete Pokémon database, DPS calculator, route strategy analysis, and enemy
+              data. Build the perfect team and conquer all routes with PokéPath TD best teams and
+              meta strategies.
             </p>
             <div class="hero-stats">
               <div class="stat-item">
@@ -54,8 +53,13 @@
     <section class="home-section video-section">
       <div class="container">
         <div class="video-wrapper">
-          <iframe v-if="iframeLoaded" :src="currentIframeSrc" class="video-iframe" frameborder="0"
-            allowfullscreen></iframe>
+          <iframe
+            v-if="iframeLoaded"
+            :src="currentIframeSrc"
+            class="video-iframe"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
           <div v-else class="video-overlay">
             <div class="game-version-selector">
               <h3 class="version-title">Choose Game Version</h3>
@@ -92,9 +96,9 @@
         <div class="game-intro-content">
           <div class="game-intro-text">
             <p class="intro-main-text">
-              <strong>PokéPath TD</strong> is a tower defense game featuring Pokémon. Strategically place your Pokémon
-              along paths to defend against waves of enemies. Each Pokémon has unique abilities, stats, and evolution
-              paths that unlock at levels 16, 36, and 100.
+              <strong>PokéPath TD</strong> is a tower defense game featuring Pokémon. Strategically
+              place your Pokémon along paths to defend against waves of enemies. Each Pokémon has
+              unique abilities, stats, and evolution paths that unlock at levels 16, 36, and 100.
             </p>
             <div class="game-mechanics-grid">
               <div class="mechanic-item">
@@ -150,14 +154,24 @@
               <h3 class="database-title">All Pokemon</h3>
             </div>
             <p class="database-description">
-              Browse 100+ Pokémon with complete data across all evolution stages. View comprehensive stats, abilities,
-              terrain compatibility, and evolution chains from Level 1 to Level 100.
+              Browse 100+ Pokémon with complete data across all evolution stages. View comprehensive
+              stats, abilities, terrain compatibility, and evolution chains from Level 1 to Level
+              100.
             </p>
             <div class="database-preview">
               <div class="database-preview-grid">
-                <div class="db-preview-item" v-for="preview in pokemonPreview.slice(0, 8)" :key="preview.id">
+                <div
+                  class="db-preview-item"
+                  v-for="preview in pokemonPreview.slice(0, 8)"
+                  :key="preview.id"
+                >
                   <div class="db-preview-image">
-                    <img v-if="preview.imageUrl" :src="preview.imageUrl" :alt="preview.name" class="db-preview-img" />
+                    <img
+                      v-if="preview.imageUrl"
+                      :src="preview.imageUrl"
+                      :alt="preview.name"
+                      class="db-preview-img"
+                    />
                     <div v-else class="db-preview-placeholder">{{ preview.name.charAt(0) }}</div>
                   </div>
                   <div class="db-preview-info">
@@ -184,19 +198,31 @@
               <h3 class="database-title">Enemy Database</h3>
             </div>
             <p class="database-description">
-              Complete reference for 125+ enemies across all threat levels. View stats, resistances, special abilities,
-              and gold rewards to build effective defense strategies.
+              Complete reference for 125+ enemies across all threat levels. View stats, resistances,
+              special abilities, and gold rewards to build effective defense strategies.
             </p>
             <div class="database-preview">
               <div class="database-preview-grid">
-                <div class="db-preview-item" v-for="enemy in featuredEnemies.slice(0, 8)" :key="enemy.id">
+                <div
+                  class="db-preview-item"
+                  v-for="enemy in featuredEnemies.slice(0, 8)"
+                  :key="enemy.id"
+                >
                   <div class="db-preview-image">
-                    <img v-if="enemy.imageUrl" :src="enemy.imageUrl" :alt="enemy.name" class="db-preview-img" />
+                    <img
+                      v-if="enemy.imageUrl"
+                      :src="enemy.imageUrl"
+                      :alt="enemy.name"
+                      class="db-preview-img"
+                    />
                     <div v-else class="db-preview-placeholder">{{ enemy.name.charAt(0) }}</div>
                   </div>
                   <div class="db-preview-info">
                     <h4 class="db-preview-name">{{ enemy.name }}</h4>
-                    <span class="db-enemy-threat" :class="`threat-${enemy.threat.toLowerCase().replace(' ', '-')}`">
+                    <span
+                      class="db-enemy-threat"
+                      :class="`threat-${enemy.threat.toLowerCase().replace(' ', '-')}`"
+                    >
                       {{ enemy.threat }}
                     </span>
                   </div>
@@ -223,20 +249,41 @@
             <h2 class="section-title">Route Strategies - PokéPath TD Map Guides</h2>
             <div class="section-title-line"></div>
           </div>
-          <p class="section-description">Detailed guides for all 9 routes with recommended teams and terrain analysis. Check out our comprehensive guides for <a href="/map-router/how-to-beat-route-1-1-articuno" class="inline-link">Route 1-1 (Articuno)</a> and <a href="/map-router/how-to-beat-route-3-1-regirock-wave-100-guide" class="inline-link">Route 3-1 (Regirock)</a>.
+          <p class="section-description">
+            Detailed guides for all 9 routes with recommended teams and terrain analysis. Check out
+            our comprehensive guides for
+            <a href="/map-router/how-to-beat-route-1-1-articuno" class="inline-link"
+              >Route 1-1 (Articuno)</a
+            >
+            and
+            <a href="/map-router/how-to-beat-route-3-1-regirock-wave-100-guide" class="inline-link"
+              >Route 3-1 (Regirock)</a
+            >.
           </p>
         </div>
         <div class="routes-preview-grid">
-          <a v-for="route in featuredRoutes.slice(0, 3)" :key="route.id" :href="`/map-router/${route.id}`"
-            class="route-preview-card">
+          <a
+            v-for="route in featuredRoutes.slice(0, 3)"
+            :key="route.id"
+            :href="`/map-router/${route.id}`"
+            class="route-preview-card"
+          >
             <div class="route-preview-image">
-              <img v-if="route.mapImage" :src="route.mapImage" :alt="route.name" class="route-preview-img" />
+              <img
+                v-if="route.mapImage"
+                :src="route.mapImage"
+                :alt="route.name"
+                class="route-preview-img"
+              />
               <div v-else class="route-preview-placeholder">
                 <span class="placeholder-icon">🗺️</span>
               </div>
               <div class="route-preview-overlay">
                 <div class="route-preview-number">{{ route.routeNumber }}</div>
-                <div class="route-preview-difficulty" :style="{ backgroundColor: difficultyColors[route.difficulty] }">
+                <div
+                  class="route-preview-difficulty"
+                  :style="{ backgroundColor: difficultyColors[route.difficulty] }"
+                >
                   {{ route.difficulty }}
                 </div>
               </div>
@@ -248,7 +295,11 @@
                 <span class="route-preview-wave">🌊 {{ route.totalWaves || 100 }}</span>
               </div>
               <div class="route-preview-terrain" v-if="route.terrain && route.terrain.length > 0">
-                <span class="terrain-tag" v-for="terrain in route.terrain.slice(0, 3)" :key="terrain">
+                <span
+                  class="terrain-tag"
+                  v-for="terrain in route.terrain.slice(0, 3)"
+                  :key="terrain"
+                >
                   {{ terrain }}
                 </span>
               </div>
@@ -277,7 +328,9 @@
             <h2 class="section-title">Strategy Tools - PokéPath TD DPS Calculator</h2>
             <div class="section-title-line"></div>
           </div>
-          <p class="section-description">Essential calculators and utilities to optimize your strategy</p>
+          <p class="section-description">
+            Essential calculators and utilities to optimize your strategy
+          </p>
         </div>
         <div class="tools-grid">
           <a v-for="tool in toolsPreview" :key="tool.id" :href="tool.path" class="tool-card">
@@ -299,6 +352,13 @@
       </div>
     </section>
 
+    <div class="sideBar">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+
     <AppFooter />
   </div>
 </template>
@@ -319,7 +379,7 @@ const currentIframeSrc = ref('')
 const gameVersions = {
   '1.2.5': 'https://html-classic.itch.zone/html/15902423/PokePath%20TD%20WEB/index.html',
   '1.3.3': 'https://hozygame.online/',
-  '1.3.6': 'https://v136.hozygame.online/'
+  '1.3.6': 'https://v136.hozygame.online/',
 }
 
 const loadGame = (version) => {
@@ -335,7 +395,9 @@ const featuredRoutes = computed(() => {
 
   for (const difficulty of difficulties) {
     if (samples.length >= 3) break
-    const route = stages.find(r => r.difficulty === difficulty && !usedDifficulties.has(difficulty))
+    const route = stages.find(
+      (r) => r.difficulty === difficulty && !usedDifficulties.has(difficulty)
+    )
     if (route) {
       usedDifficulties.add(difficulty)
       samples.push(route)
@@ -344,7 +406,7 @@ const featuredRoutes = computed(() => {
 
   for (const route of stages) {
     if (samples.length >= 3) break
-    if (!samples.find(r => r.id === route.id)) {
+    if (!samples.find((r) => r.id === route.id)) {
       samples.push(route)
     }
   }
@@ -358,28 +420,32 @@ const toolsPreview = [
     id: 1,
     icon: '⚡',
     title: 'DPS Calculator',
-    description: 'Calculate and compare Pokémon damage per second. Analyze power, recharge time, and critical hit rate to find the best damage dealers.',
+    description:
+      'Calculate and compare Pokémon damage per second. Analyze power, recharge time, and critical hit rate to find the best damage dealers.',
     path: '/tools/dps-calculator',
   },
   {
     id: 2,
     icon: '📋',
     title: 'Pokémon Categories',
-    description: 'Browse Pokémon by tactical categories. Find specialized Pokémon for status effects, AOE attacks, burst damage, and support roles.',
+    description:
+      'Browse Pokémon by tactical categories. Find specialized Pokémon for status effects, AOE attacks, burst damage, and support roles.',
     path: '/tools/pokemon-categories',
   },
   {
     id: 3,
     icon: '⚔️',
     title: 'Enemy Counter',
-    description: 'Find the best Pokémon to counter specific enemies. Analyze resistances and get personalized recommendations based on DPS calculations.',
+    description:
+      'Find the best Pokémon to counter specific enemies. Analyze resistances and get personalized recommendations based on DPS calculations.',
     path: '/tools/enemy-counter',
   },
   {
     id: 4,
     icon: '🗺️',
     title: 'Route Strategy',
-    description: 'Optimize your team composition for each map route. Get recommended Pokémon types, terrain advantages, and strategic tips.',
+    description:
+      'Optimize your team composition for each map route. Get recommended Pokémon types, terrain advantages, and strategic tips.',
     path: '/tools/route-strategy',
   },
 ]
@@ -413,7 +479,7 @@ const featuredEnemies = computed(() => {
 
   for (const threat of threatLevels) {
     if (samples.length >= 8) break
-    const enemy = enemyData.find(e => e.threat === threat && !usedThreats.has(threat))
+    const enemy = enemyData.find((e) => e.threat === threat && !usedThreats.has(threat))
     if (enemy) {
       usedThreats.add(threat)
       samples.push(enemy)
@@ -422,7 +488,7 @@ const featuredEnemies = computed(() => {
 
   for (const enemy of enemyData) {
     if (samples.length >= 8) break
-    if (!samples.find(e => e.id === enemy.id)) {
+    if (!samples.find((e) => e.id === enemy.id)) {
       samples.push(enemy)
     }
   }
@@ -432,6 +498,21 @@ const featuredEnemies = computed(() => {
 </script>
 
 <style scoped>
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+}
+.sideBar .item{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f00;
+}
+
+
 .home-view {
   min-height: 100vh;
   position: relative;
@@ -637,7 +718,7 @@ const featuredEnemies = computed(() => {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  background: url("/images/video-bg.webp") no-repeat center center rgba(26, 35, 50, 0.7);
+  background: url('/images/video-bg.webp') no-repeat center center rgba(26, 35, 50, 0.7);
   background-size: 100% 100%;
   border-radius: 16px;
   overflow: hidden;
@@ -1153,9 +1234,9 @@ const featuredEnemies = computed(() => {
   transition: transform 0.3s ease;
 }
 
-  .tool-card:hover .tool-arrow {
-    transform: translateX(4px);
-  }
+.tool-card:hover .tool-arrow {
+  transform: translateX(4px);
+}
 
 /* Inline Links */
 .inline-link {
@@ -1499,7 +1580,7 @@ const featuredEnemies = computed(() => {
   }
 
   .game-mechanics-grid {
-    grid-template-columns:  repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
   }
 
