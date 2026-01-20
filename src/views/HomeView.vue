@@ -502,8 +502,10 @@ const featuredEnemies = computed(() => {
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 30px;
-  right: 20px;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  gap: 12px;
 }
 .sideBar .item{
   width: 48px;
