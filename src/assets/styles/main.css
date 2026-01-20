@@ -66,15 +66,15 @@ body::after {
 }
 
 @media (min-width: 640px) {
-  .container {
+  /* .container {
     padding: 0 1.5rem;
-  }
+  } */
 }
 
 @media (min-width: 1024px) {
-  .container {
+  /* .container {
     padding: 0 2rem;
-  }
+  } */
 }
 
 /* Page Header - 内页统一头部样式 */
