@@ -352,12 +352,14 @@
       </div>
     </section>
 
-    <div class="sideBar">
+    <!-- 
+    <div class="sideBar"> 
       <div class="item"></div>
       <div class="item"></div>
       <div class="item"></div>
       <div class="item"></div>
     </div>
+    -->
 
     <AppFooter />
   </div>
